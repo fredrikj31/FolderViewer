@@ -23,17 +23,21 @@ namespace FolderViewer {
 				// Creating the main node
 				TreeNode mainNode = new TreeNode();
 				mainNode.Name = "main";
-				mainNode.Text = "Main Node";
+				mainNode.Text = "Selected Folder";
 
 				this.treeViewResult.Nodes.Add(mainNode);
 
-				string[] dirNames = Directory.GetDirectories(fileDialog.RootFolder);
+				string[] dirNames = Directory.GetDirectories(fileDialog.SelectedPath);
 
 				// Creating sub nodes
 				foreach (string item in dirNames) {
 					TreeNode subNode = new TreeNode();
-					mainNode.Name = item.ToLower();
-					mainNode.Text = item;
+					subNode.Name = item.ToLower();
+					// Splitting the name
+					string[] splitName = item.Split('\\');
+
+
+					subNode.Text = ;
 
 					mainNode.Nodes.Add(subNode);
 
