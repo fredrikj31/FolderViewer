@@ -64,7 +64,12 @@ namespace FolderViewer {
 
 			textBoxFolderName.Text = di.Name;
 			textBoxFolderPath.Text = di.FullName;
+			textBoxParentFolder.Text = di.Parent.ToString();
 			textBoxFolderSize.Text = prog.DirSize(e.Node.FullPath).ToString();
+			textBoxAttributes.Text = di.Attributes.ToString();
+			textBoxCreatedAt.Text = di.CreationTime.ToString();
+			textBoxAccess.Text = di.LastAccessTime.ToString();
+			textBoxWrite.Text = di.LastWriteTime.ToString();
 		}
 
 		// Method taken from https://stackoverflow.com/a/30889280/9077059
